@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import products from "home/products";
 import { useParams } from "react-router-dom";
+
+import placeAddToCart from "addtocart/placeAddToCart";
 
 interface IProps {}
 
@@ -8,6 +10,7 @@ const ProductDetail: React.FC<IProps> = (props) => {
   const { id } = useParams();
   const [product, setProduct] = useState<Product>(null);
   const { getProductById, currency } = products;
+  const buttonref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (id) {
@@ -16,6 +19,12 @@ const ProductDetail: React.FC<IProps> = (props) => {
       setProduct(null);
     }
   }, [id]);
+
+  useEffect(() => {
+    if (buttonref.current) {
+      placeAddToCart(buttonref.current, String(product.id));
+    }
+  }, [product]);
 
   if (!product) return null;
 
@@ -31,6 +40,7 @@ const ProductDetail: React.FC<IProps> = (props) => {
             {currency.format(product.price)}
           </div>
         </div>
+        <div ref={buttonref}></div>
         <div className="mt-10"> {product.description}</div>
         <div className="mt-10"> {product.longDescription}</div>
       </div>

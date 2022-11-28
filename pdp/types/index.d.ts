@@ -1,5 +1,7 @@
 declare module "home/Footer";
 declare module "home/Header";
+declare module "addtocart/placeAddToCart";
+
 declare module "home/products" {
   export default {
     getProducts: () => Promise<Product[]>(),
