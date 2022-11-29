@@ -52,6 +52,7 @@ module.exports = {
         "./cart": "./src/cart.ts",
         "./Login": "./src/Login.tsx",
         "./MiniCart": "./src/MiniCart.tsx",
+        "./CartContent": "./src/Cart.tsx"
       },
       shared: {
         ...deps,
