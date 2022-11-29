@@ -35,7 +35,7 @@ const Cart: React.FC<IProps> = (props) => {
         <div></div>
         <div></div>
         <div></div>
-        <div>
+        <div id="grand_total">
           {currency.format(
             items.reduce((acc, item) => {
               return acc + item.price * item.price;

@@ -6,7 +6,8 @@
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3000 npx serve",
     "start": "webpack serve --open --mode development",
-    "start:live": "webpack serve --open --mode development --live-reload --hot"
+    "start:live": "webpack serve --open --mode development --live-reload --hot",
+    "cypress:open": "cypress open"
   },
   "license": "MIT",
   "author": {
@@ -25,6 +26,7 @@
     "autoprefixer": "^10.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
+    "cypress": "^11.2.0",
     "html-webpack-plugin": "^5.3.2",
     "jest-environment-jsdom": "^29.3.1",
     "postcss": "^8.2.1",
