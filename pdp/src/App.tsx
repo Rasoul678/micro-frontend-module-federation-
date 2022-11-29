@@ -21,7 +21,7 @@ const router = createBrowserRouter([
 const App = () => (
   <div className="text-3xl mx-auto max-w-6xl">
     <ErrorBoundary>
-      <Header app={{ name: "pdp" }} />
+      <Header />
     </ErrorBoundary>
     <RouterProvider router={router} />
     <Footer />

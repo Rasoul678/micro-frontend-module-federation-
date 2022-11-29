@@ -11,7 +11,7 @@ import Cart from "./Cart";
 
 const App = () => (
   <div className="text-3xl mx-auto max-w-6xl">
-    <Header app={{ name: "cart" }} />
+    <Header />
     <Cart />
     <Footer />
   </div>
